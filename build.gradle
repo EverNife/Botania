@@ -3,3 +3,5 @@
 plugins {
     id 'com.gtnewhorizons.gtnhconvention'
 }
+
+version = "1.10.12-GTNH-evernife-v2"
