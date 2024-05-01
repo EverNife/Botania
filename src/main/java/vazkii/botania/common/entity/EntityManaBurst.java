@@ -662,7 +662,10 @@ public class EntityManaBurst extends EntityThrowable implements IManaBurst {
 
 	public TileEntity getShooter() {
 		ChunkCoordinates coords = getBurstSourceChunkCoordinates();
-		TileEntity tile = worldObj.getTileEntity(coords.posX, coords.posY, coords.posZ);
+		TileEntity tile = null;
+		if (worldObj.getChunkProvider().chunkExists(coords.posX >> 4, coords.posZ >> 4)){
+			tile = worldObj.getTileEntity(coords.posX, coords.posY, coords.posZ);
+		}
 		return tile;
 	}
 
